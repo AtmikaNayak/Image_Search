@@ -41,8 +41,6 @@ A web-based image search application that allows users to discover high-quality 
 
 ---
 
-## Screenshot
-
 ### Image Search Interface
 
 ![Image Explorer](public/image-search.png)
