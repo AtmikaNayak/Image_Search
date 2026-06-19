@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Explorer</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+    <div class="container">
+        <img src="/logo.png" alt="logo" class="logo">
+        <h1>Image Explorer</h1>
+        <p>Search millions of beautiful photos</p>
+
+        <form action="/search" method="POST">
+            <input type="text" name="search" placeholder="Search images..." required>
+            <button type="submit">
+                Search
+            </button>
+        </form>
+        <% if(searchTerm){ %>
+            <h2>Results for <%= searchTerm %>
+            </h2>
+            <% } %>
+                <div class="gallery">
+                    <% images.forEach((image)=> { %>
+                        <div class="card">
+                            <img src="<%= image.src.large %>" alt="">
+                            <div class="info">
+                                <p>
+                                    <%= image.photographer %>
+                                </p>
+                                <a href="<%= image.src.original %>" target="_blank">Download</a>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+    </div>
+</body>
+
+</html>
